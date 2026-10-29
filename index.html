@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Vinícius Gama | Performance para clínicas</title>
+<meta name="description" content="Diagnóstico gratuito da sua clínica e contato direto com Vinícius Gama, cofundador da RiseUp Odonto.">
+<meta name="theme-color" content="#141414">
+<meta property="og:title" content="Vinícius Gama | Performance para clínicas">
+<meta property="og:description" content="Descubra onde sua clínica perde pacientes depois que o lead chega.">
+<meta property="og:image" content="foto.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%23141414'/%3E%3Ctext x='32' y='41' font-family='Arial' font-size='26' font-weight='600' fill='%2329D9D5' text-anchor='middle'%3EVG%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500&family=DM+Serif+Display:ital@1&family=Poppins:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#141414;
+    --card:#1C2020;
+    --line:#2E3434;
+    --ciano:#29D9D5;
+    --texto:#F4F7F7;
+    --suave:#A9B3B3;
+    --apagado:#6F7878;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    min-height:100vh;min-height:100dvh;
+    background:var(--bg);color:var(--texto);
+    font-family:Archivo,system-ui,sans-serif;font-size:15px;line-height:1.5;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  .fundo{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+  .fundo span{position:absolute;left:50%;top:-140px;border:1px solid rgba(41,217,213,.08);border-radius:50%;transform:translateX(-50%)}
+  .fundo span:nth-child(1){width:420px;height:420px}
+  .fundo span:nth-child(2){width:620px;height:620px;top:-240px}
+  .fundo span:nth-child(3){width:840px;height:840px;top:-350px}
+  main{position:relative;z-index:1;max-width:440px;margin:0 auto;padding:44px 20px calc(32px + env(safe-area-inset-bottom))}
+  header{text-align:center}
+  .foto{width:96px;height:96px;border-radius:50%;object-fit:cover;display:block;margin:0 auto;border:2px solid var(--ciano);padding:3px;background:var(--bg)}
+  .nome{font-family:Poppins,sans-serif;font-weight:500;font-size:21px;margin-top:14px;letter-spacing:-.01em}
+  .cargo{font-size:13px;color:var(--suave);margin-top:2px}
+  .frase{font-family:Poppins,sans-serif;font-weight:500;font-size:23px;line-height:1.28;letter-spacing:-.015em;margin:22px auto 0;max-width:340px}
+  .frase em{font-family:"DM Serif Display",serif;font-style:italic;font-weight:400;color:var(--ciano);font-size:1.08em}
+
+  .destaque{display:block;text-decoration:none;color:inherit;border:1.5px solid var(--ciano);border-radius:20px;padding:20px;margin-top:28px;background:rgba(41,217,213,.04);transition:transform .15s ease,background .15s ease}
+  .destaque:active{transform:scale(.985)}
+  .selo{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--ciano)}
+  .selo::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--ciano)}
+  .destaque h2{font-family:Poppins,sans-serif;font-weight:500;font-size:18px;line-height:1.35;margin-top:10px;letter-spacing:-.01em}
+  .destaque p{font-size:14px;color:var(--suave);margin-top:8px}
+  .botao{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:18px;background:var(--ciano);color:#141414;border-radius:999px;padding:14px 18px;font-family:Poppins,sans-serif;font-weight:500;font-size:15px}
+  .botao svg{width:18px;height:18px}
+
+  .lista{margin-top:14px;display:grid;gap:10px}
+  .link{display:flex;align-items:center;gap:14px;border:1px solid var(--line);border-radius:16px;padding:14px 16px;text-decoration:none;color:inherit;background:var(--card);transition:border-color .15s ease,transform .15s ease}
+  a.link:hover{border-color:rgba(41,217,213,.5)}
+  a.link:active{transform:scale(.985)}
+  .icone{flex:0 0 40px;height:40px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:rgba(41,217,213,.1);color:var(--ciano)}
+  .icone svg{width:20px;height:20px}
+  .texto{flex:1;min-width:0}
+  .texto strong{display:block;font-family:Poppins,sans-serif;font-weight:500;font-size:15px}
+  .texto span{display:block;font-size:13px;color:var(--suave)}
+  .seta{width:18px;height:18px;color:var(--suave);flex:0 0 auto}
+
+  .manutencao{background:transparent;border-style:dashed;cursor:default}
+  .manutencao .icone{background:rgba(255,255,255,.04);color:var(--apagado)}
+  .manutencao .texto strong{color:var(--suave)}
+  .manutencao .texto span{color:var(--apagado)}
+  .etiqueta{flex:0 0 auto;font-size:11px;color:var(--suave);border:1px solid #3A4141;border-radius:999px;padding:4px 10px;white-space:nowrap}
+
+  footer{text-align:center;margin-top:34px;font-size:12px;color:var(--apagado)}
+  footer a{color:var(--suave);text-decoration:none}
+
+  @media (min-width:768px){main{padding-top:72px}}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="fundo" aria-hidden="true"><span></span><span></span><span></span></div>
+
+<main>
+  <header>
+    <img class="foto" src="foto.jpg" alt="Foto de Vinícius Gama" width="96" height="96">
+    <h1 class="nome">Vinícius Gama</h1>
+    <p class="cargo">Performance para clínicas · Cofundador RiseUp Odonto</p>
+    <p class="frase">Ajudo clínicas a transformar demanda em faturamento <em>previsível.</em></p>
+  </header>
+
+  <a class="destaque" href="https://riseup-diagnostico.vercel.app/">
+    <span class="selo">Gratuito · leva poucos minutos</span>
+    <h2>Onde sua clínica perde pacientes depois que o lead chega?</h2>
+    <p>Descubra qual etapa do atendimento mais trava o seu faturamento.</p>
+    <span class="botao">Fazer meu diagnóstico
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </span>
+  </a>
+
+  <nav class="lista" aria-label="Links">
+    <a class="link" href="https://wa.me/5577981631559?text=Vim%20pelo%20Instagram%20e%20quero%20entender%20o%20diagn%C3%B3stico">
+      <span class="icone">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21l1.65-3.8A9 9 0 1 1 7.6 20.1L3 21"/><path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1"/></svg>
+      </span>
+      <span class="texto"><strong>Falar comigo</strong><span>Direto no WhatsApp</span></span>
+      <svg class="seta" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+    </a>
+
+    <div class="link manutencao" aria-disabled="true">
+      <span class="icone">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/><path d="M9 9v.01M9 12v.01M9 15v.01M9 18v.01"/></svg>
+      </span>
+      <span class="texto"><strong>Conheça a RiseUp Odonto</strong><span>Soluções, resultados e quem somos</span></span>
+      <span class="etiqueta">Em manutenção</span>
+    </div>
+
+    <div class="link manutencao" aria-disabled="true">
+      <span class="icone">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 9h8M8 13h6"/><path d="M12.5 20.5L9 18H6a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3h12a3 3 0 0 1 3 3v6"/><path d="M19 16l-2 3h4l-2 3"/></svg>
+      </span>
+      <span class="texto"><strong>Rise Connect</strong><span>Atendimento comercial da clínica, 24h</span></span>
+      <span class="etiqueta">Em manutenção</span>
+    </div>
+  </nav>
+
+  <footer>
+    <a href="https://www.instagram.com/viniciusgamapro/">@viniciusgamapro</a>
+  </footer>
+</main>
+</body>
+</html>
